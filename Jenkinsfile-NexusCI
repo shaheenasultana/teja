@@ -1,20 +1,20 @@
 pipeline {
     agent any
     tools {
-        maven "maven3"
+        maven "maven_home"
     }
     environment {
         NEXUS_VERSION = "nexus3"
         NEXUS_PROTOCOL = "http"
-        NEXUS_URL = "18.206.74.244:8081"
-        NEXUS_REPOSITORY = "maven-releases"
-        NEXUS_CREDENTIAL_ID = "nexus-credentials"
+        NEXUS_URL = "44.202.43.213:8081"
+        NEXUS_REPOSITORY = "maven-snapshots"
+        NEXUS_CREDENTIAL_ID = "nexus"
     }
     stages {
         stage("SCM") {
             steps {
                 script {
-                    git 'https://github.com/cloudtechmasters/springboohello-CICD.git';
+                    git 'https://github.com/shaheenasultana/teja.git';
                 }
             }
         }
