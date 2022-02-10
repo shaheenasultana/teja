@@ -7,10 +7,17 @@ pipeline {
         NEXUS_VERSION = "nexus3"
         NEXUS_PROTOCOL = "http"
         NEXUS_URL = "34.238.154.222:8081"
-        NEXUS_REPOSITORY = "maven-releases/${BUILD_NUMBER}"
+        NEXUS_REPOSITORY = "maven-releases"
         NEXUS_CREDENTIAL_ID = "nexus"
     }
     stages {
+        stage("SCM") {
+            steps {
+                script {
+                    git 'https://github.com/shaheenasultana/teja.git';
+                }
+            }
+        }
         stage("Maven Build") {
             steps {
                 script {
