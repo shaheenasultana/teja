@@ -14,7 +14,7 @@ pipeline {
         stage("SCM") {
             steps {
                 script {
-                    git 'https://github.com/shaheenasultana/teja.git';
+                    git 'https://github.com/cloudtechmasters/springboohello-CICD.git';
                 }
             }
         }
